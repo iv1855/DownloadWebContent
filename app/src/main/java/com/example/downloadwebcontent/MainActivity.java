@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         DownloadTask task = new DownloadTask();
         try {
             String result = task.execute(mailRu).get();
+            Log.i("URL", result);
         } catch (ExecutionException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
@@ -32,7 +33,9 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... strings) {
-            return null;
+
+            Log.i("URL", strings[0]);
+            return "Готово!";
         }
     }
 
